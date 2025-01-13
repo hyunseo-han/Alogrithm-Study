@@ -27,7 +27,7 @@ size = min(row,column) #Max size of square 정사각형의 최대 크기
 for k in range(size, 0, -1):
     # 네 꼭지점의 크기가 같은 정사각형을 찾았으면 True를 받아 넓이를 출력해주고 break
     if find_squre(k):
-        print(k**2) #Square K to find area 제ㅔ곱해서 넓이 구하기
+        print(k*k) #Square K to find area 제ㅔ곱해서 넓이 구하기
         break
     
     
