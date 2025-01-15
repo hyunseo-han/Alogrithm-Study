@@ -17,16 +17,16 @@ def bnp(money, stock, stock_price):
     
 
 def timing(money, stock, stock_price):
-    for i in range(3, 14):  # 3일 전부터 비교 시작
-        # 3일 연속 상승 → 전량 매도
+    for i in range(3, 14):  # Started comparing 3 days ago
+        # 3 consecutive days of gains → sell all
         if stock_price[i-3] < stock_price[i-2] < stock_price[i-1] < stock_price[i]:
             money += stock * stock_price[i]
             stock = 0
-        # 3일 연속 하락 → 최대한 매수
+        # Down for 3 consecutive days → Buy as much as possible 
         elif stock_price[i-3] > stock_price[i-2] > stock_price[i-1] > stock_price[i]:
             stock += money // stock_price[i]
             money %= stock_price[i]
-    return money + stock * stock_price[13]  # 최종 자산 계산
+    return money + stock * stock_price[13]
  
     
     
